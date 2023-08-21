@@ -2,10 +2,15 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import styles from '~/styles/Home.module.css'
+import { useRouter } from 'next/router'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
+  const router = useRouter()
+  const goToTest = () =>{
+router.push(`/test`)
+  }
   return (
     <>
       <Head>
@@ -48,6 +53,11 @@ export default function Home() {
             height={37}
             priority
           />
+        </div>
+
+        <div onClick={goToTest}>
+
+          go to test
         </div>
 
         <div className={styles.grid}>
